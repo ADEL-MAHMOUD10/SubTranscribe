@@ -79,4 +79,4 @@ A live demo of this site can be found [here](https://your-live-demo-link.com).
 This project is licensed under the MIT License.
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
-![GitHub stars](https://img.shields.io/github/stars/ADEL-MAHMOUD10/your-repo.svg)
+![GitHub stars](https://img.shields.io/github/stars/ADEL-MAHMOUD10/SubTranscribe.svg)
