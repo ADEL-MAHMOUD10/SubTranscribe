@@ -146,7 +146,6 @@ def upload_file():
     except TypeError:
         return render_template("error.html")
     except Exception as e:
-        os.remove(file_path)
         # Log exception and return error page
         return render_template("error.html")
     
