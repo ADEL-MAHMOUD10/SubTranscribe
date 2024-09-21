@@ -1,0 +1,16 @@
+# Ignore the .env file
+.env
+
+# Ignore database files
+uploads/progress.db
+
+# Ignore the uploads directory (if you don't want to include uploaded files)
+uploads/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+env/

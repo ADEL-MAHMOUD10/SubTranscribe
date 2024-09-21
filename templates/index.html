@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubTranscribe</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/image/SubTranscribe.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <a href="/"><img src="/static/image/SubTranscribe.webp" style="max-width: 40%;margin: 10px 10px;" alt="..."></a>
+    </nav>
+    <div class="container0">
+        <div class="container1">        
+            <div class="Home" id="Home">
+                <h1>Transcription & Subtitles</h1>
+                <img src="/static/image/upload.png" style="max-width: 15%;margin: 0 10px ;" alt="">
+            </div>
+            <h4>Select an audio or video file and the subtitle file will be created </h4>
+            <form action="/" method="POST" enctype="multipart/form-data" id="upload-form">
+                <label for="file" class="custom-file-upload">
+                    Choose File
+                </label>
+                <input type="file" id="file" name="file" accept="audio/*|video/*|" onchange="updateFileName()">
+                <span id="file-name">No file chosen</span>
+                <br><br>
+                <button type="submit" id="submit-btn">Convert and Transcribe</button>
+            </form>
+            
+            <div id="progress-container" style="display:none;">
+                <h2>Processing...</h2>
+                <div class="prog">
+                    <img src="/static/image/transfer.png" style="max-width: 10%;" alt="">
+                    <progress id="progress-bar" value="0" max="100"></progress>
+                    <span id="progress-text">0%</span>
+                </div>
+                <span id="progress-message">No File chosen</span>  
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <h1>About transcription Audio</h1>
+        <div class="steps">
+            <!-- Step 1 -->
+            <div class="step">
+                <img src="/static/image/upload-video-audio.webp" alt="Step 1">
+                <h3>1. Supported many languages</h3>
+                <p>Upload your audio file or video file , Transcribe seamlessly accross 100+ languages.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="step">
+                <img src="/static/image/transcribe-audio-into-text.webp" alt="Step 2">
+                <h3>2. Transcribe Audio to Text</h3>
+                <p>Our audio to text converter delivers results fast and with 99% accuracy.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="step">
+                <img src="/static/image/download-audio-transcription.webp" alt="Step 3">
+                <h3>3. Download Transcript</h3>
+                <p>Once the transcription is ready, you can download your Subtitles.</p>
+                <a href="#Home" class="download-btn">Download Subtitles</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>SubTranscribe © 2024 All Rights Reserved. Designed by <span> A D E L M A H M O U D </span> </p>
+                <div class="toogle">
+                    <a class="email" href="mailto: adelam578568@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a class="insta" href="http://instagram.com/adel_mahmoud10/"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="x" href="https://twitter.com/Adel_MAhmoud100?s=09"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="face" href="https://www.facebook.com/profile.php?id=100013266852973"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

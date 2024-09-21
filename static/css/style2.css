@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #d8d8d8;
+}
+
+h1 {
+    text-align: center;
+    color: #1d2920;
+    font-size: 2rem;
+    font-family: Verdana, Geneva;
+    font-weight: bold;
+}
+h3{
+    color: #1d2920;
+    font-weight: bold;
+    font-style: oblique;
+}
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    justify-content: center;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    background-color: #1d2920;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+}
+
+select{
+    color: #fff;
+    background-color: #1d2920;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+
+img {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+/* footer */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    min-height: 80vh; 
+}
+
+.footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px; 
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-content span{
+    color: #1d2920;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.footer-text {
+    font-size: 2vw; 
+}
+
+
+.toogle{
+    margin: 15px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toogle  a{
+    margin: 5px;
+    color: #fff;
+    font-size: 1.7rem;
+} 
+.toogle .email:hover{
+    color: #000000;
+}
+.toogle .insta:hover{
+    color: #e11b61;
+}
+.toogle .x:hover{
+    color: #000;
+}
+.toogle .face:hover{
+    color: #1100ff;
+}
+
+@media (max-width: 600px) {
+    .footer-content P{
+        font-size: 2.1vw; 
+    }
+}
