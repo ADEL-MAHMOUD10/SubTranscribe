@@ -2,6 +2,7 @@ import os
 import requests
 import time
 import sqlite3
+import shutil
 from flask import Flask, request, jsonify, render_template, redirect, url_for, send_file
 from werkzeug.utils import secure_filename
 import moviepy.editor as mp
