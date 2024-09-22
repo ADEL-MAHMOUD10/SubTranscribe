@@ -9,7 +9,7 @@ from datetime import datetime
 
 
 app = Flask(__name__)
-app.config["UPLOAD_FOLDER"] = "uploads"
+app.config["UPLOAD_FOLDER"] = "tmp"
 
 DATABASE = 'progress.db'
 def create_db():
@@ -158,8 +158,8 @@ def serve_file(filename):
             
         return response
 if __name__ == '__main__':
-    if not os.path.exists('uploads'):
-        os.makedirs('uploads')
+    if not os.path.exists('tmp'):
+        os.makedirs('tmp')
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
     create_db()
