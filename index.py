@@ -158,7 +158,8 @@ def serve_file(filename):
             
         return response
 if __name__ == '__main__':
-    
+    if not os.path.exists('uploads'):
+        os.makedirs('uploads')
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
     create_db()
