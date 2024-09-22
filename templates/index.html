@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SubTranscribe</title>
     <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="icon" href="/static/image/SubTranscribe.png" type="image/x-icon">
+    <link rel="icon" href="/static/image/SubTranscribe.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -23,7 +23,7 @@
                 <label for="file" class="custom-file-upload">
                     Choose File
                 </label>
-                <input type="file" id="file" name="file" accept="audio/*|video/*|" onchange="updateFileName()">
+                <input type="file" id="file" name="file" accept="audio/*,video/*" onchange="updateFileName()">
                 <span id="file-name">No file chosen</span>
                 <br><br>
                 <button type="submit" id="submit-btn">GO Transcribe</button>
@@ -43,19 +43,16 @@
     <div class="container2">
         <h1>About transcription Audio</h1>
         <div class="steps">
-            <!-- Step 1 -->
             <div class="step">
                 <img src="/static/image/upload-video-audio.webp" alt="Step 1">
                 <h3>1. Supported many languages</h3>
-                <p>Upload your audio file or video file , Transcribe seamlessly accross 100+ languages.</p>
+                <p>Upload your audio file or video file, Transcribe seamlessly across 100+ languages.</p>
             </div>
-            <!-- Step 2 -->
             <div class="step">
                 <img src="/static/image/transcribe-audio-into-text.webp" alt="Step 2">
                 <h3>2. Transcribe Audio to Text</h3>
                 <p>Our audio to text converter delivers results fast and with 99% accuracy.</p>
             </div>
-            <!-- Step 3 -->
             <div class="step">
                 <img src="/static/image/download-audio-transcription.webp" alt="Step 3">
                 <h3>3. Download Transcript</h3>
@@ -68,12 +65,11 @@
     <footer class="footer">
         <div class="footer-content">
             <p>SubTranscribe © 2024 All Rights Reserved. Designed by <span> A D E L M A H M O U D </span> </p>
-                <div class="toogle">
-                    <a class="email" href="mailto: adelam578568@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    <a class="insta" href="http://instagram.com/adel_mahmoud10/"><i class="fa-brands fa-instagram"></i></a>
-                    <a class="x" href="https://twitter.com/Adel_MAhmoud100?s=09"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a class="face" href="https://www.facebook.com/profile.php?id=100013266852973"><i class="fa-brands fa-facebook"></i></a>
-                </div>
+            <div class="toogle">
+                <a class="email" href="mailto: adelam578568@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a class="insta" href="http://instagram.com/adel_mahmoud10/"><i class="fa-brands fa-instagram"></i></a>
+                <a class="x" href="https://twitter.com/Adel_MAhmoud100?s=09"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="face" href="https://www.facebook.com/profile.php?id=100013266852973"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
     </footer>
