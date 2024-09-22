@@ -90,8 +90,7 @@ def upload_file():
     global progress
     progress = {"status": 0, "message": "Initializing"}
     
-    try:
-        if request.method == 'POST':
+    if request.method == 'POST':
             file = request.files['file']
             progress["status"] += 1
             filename = secure_filename(file.filename)
@@ -123,12 +122,6 @@ def upload_file():
 
         # For GET request, render the file upload form
         return render_template('index.html')
-        
-    except FileNotFoundError:
-        return render_template("error.html")
-    except TypeError:
-        return render_template("error.html")
-    except Exception as e:
     
 @app.route('/download/<transcript_id>', methods=['GET', 'POST'])
 def download_subtitle(transcript_id):
