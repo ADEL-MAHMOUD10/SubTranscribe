@@ -129,8 +129,6 @@ def upload_file():
     except TypeError:
         return render_template("error.html")
     except Exception as e:
-        # Log exception and return error page
-        return render_template("error.html")
     
 @app.route('/download/<transcript_id>', methods=['GET', 'POST'])
 def download_subtitle(transcript_id):
@@ -168,12 +166,7 @@ def serve_file(filename):
                     time.sleep(1)
             
             return response
-        except Exception:
-            return render_template("error.html")
-        except FileNotFoundError:
-            return render_template("error.html")
-        except TypeError:
-            return render_template("error.html")
+
     
 if __name__ == '__main__':
     
