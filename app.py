@@ -95,7 +95,7 @@ def upload_audio_to_assemblyai(audio_path):
             progress["message"] = "Complete"
             return transcript_id
         elif transcription_result['status'] == 'error':
-            update_progress(transcript_id=None, status=0, message="Error uploading")
+            update_progress(transcript_id, status=0, message="Error uploading")
             progress["message"] = "Error"
             raise RuntimeError(f"Transcription failed: {transcription_result['error']}")
         else:
@@ -140,7 +140,9 @@ def upload_file():
 
             transcript_id = upload_audio_to_assemblyai(audio_file_path)
             return redirect(url_for('download_subtitle', transcript_id=transcript_id))
-
+        # For GET request, render the file upload form
+        return render_template('index.html')
+    
     except FileNotFoundError:
         return render_template("error.html")
     except TypeError:
@@ -148,9 +150,6 @@ def upload_file():
     except Exception as e:
         # Log exception and return error page
         return render_template("error.html")
-    
-    # For GET request, render the file upload form
-    return render_template('index.html')
 
 @app.route('/download/<transcript_id>', methods=['GET', 'POST'])
 def download_subtitle(transcript_id):
