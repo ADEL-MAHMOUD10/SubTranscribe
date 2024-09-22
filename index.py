@@ -10,32 +10,6 @@ from datetime import datetime
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "/tmp"
 
-DATABASE = '/tmp/progress.db'
-
-def create_db():
-    with sqlite3.connect(DATABASE) as conn:
-        c = conn.cursor()
-        c.execute('''CREATE TABLE IF NOT EXISTS progress
-                    (id TEXT PRIMARY KEY, status INTEGER, message TEXT, date DATETIME DEFAULT CURRENT_TIMESTAMP)''')
-        conn.commit()
-    
-def update_progress(transcript_id, status, message):
-    conn = sqlite3.connect('progress.db')
-    c = conn.cursor()
-    c.execute("INSERT OR REPLACE INTO progress (id, status, message) VALUES (?, ?, ?)",
-              (transcript_id, status, message))
-    conn.commit()
-    conn.close()
-
-def get_progress(transcript_id):
-    conn = sqlite3.connect('progress.db')
-    c = conn.cursor()
-    c.execute("SELECT status, message FROM progress WHERE id=?", (transcript_id,))
-    row = c.fetchone()
-    conn.close()
-    return row if row else (0, "Initializing")
-
-
 progress = {"status": 0, "message": "Initializing"}
 
 def upload_audio_to_assemblyai(audio_path):
@@ -72,7 +46,6 @@ def upload_audio_to_assemblyai(audio_path):
         transcription_result = requests.get(polling_endpoint, headers=headers).json()
         if transcription_result['status'] == 'completed':
             progress["status"] = 100
-            update_progress(transcript_id, status=100, message="completed")
             progress["message"] = "Complete"
             os.remove(audio_path) 
             return transcript_id
@@ -114,7 +87,6 @@ def upload_file():
                 progress["message"] = "Uploading audio file"  
             else:
                 os.remove(file_path)
-                update_progress(transcript_id, status=0, message="Error File")
                 return render_template("error.html")
 
             transcript_id = upload_audio_to_assemblyai(audio_file_path)
@@ -167,9 +139,7 @@ def serve_file(filename):
             return render_template("error.html")
     
 if __name__ == '__main__':
-    
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
-    create_db()
     app.run(debug=True, host="0.0.0.0")
 
