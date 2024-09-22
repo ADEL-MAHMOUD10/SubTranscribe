@@ -12,11 +12,7 @@ from datetime import datetime
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "/tmp"
 
-db_path = 'database.db'
 temp_db_path = '/tmp/database.db'
-
-if not os.path.exists(temp_db_path):
-    shutil.copy(db_path, temp_db_path)
 
 def create_db():
     with sqlite3.connect(temp_db_path) as conn:
