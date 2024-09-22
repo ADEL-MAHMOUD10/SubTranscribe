@@ -11,9 +11,14 @@ from datetime import datetime
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "/tmp"
 
-DATABASE = 'progress.db'
+db_path = 'database.db'
+temp_db_path = '/tmp/database.db'
+
+if not os.path.exists(temp_db_path):
+    shutil.copy(db_path, temp_db_path)
+
 def create_db():
-    with sqlite3.connect(DATABASE) as conn:
+    with sqlite3.connect(temp_db_path) as conn:
         c = conn.cursor()
         c.execute('''CREATE TABLE IF NOT EXISTS progress
                     (id TEXT PRIMARY KEY, status INTEGER, message TEXT, date DATETIME DEFAULT CURRENT_TIMESTAMP)''')
