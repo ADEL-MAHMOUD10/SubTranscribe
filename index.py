@@ -2,13 +2,10 @@ import os
 import requests
 import time
 import sqlite3
-import warnings
 from flask import Flask, request, jsonify, render_template, redirect, url_for, send_file
 from werkzeug.utils import secure_filename
 import moviepy.editor as mp
 from datetime import datetime
-
-warnings.filterwarnings("ignore", category=SyntaxWarning)
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "/tmp"
